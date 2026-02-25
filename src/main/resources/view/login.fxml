@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<VBox alignment="CENTER" spacing="20"
+      xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.controller.LoginController"
+      stylesheets="@../css/style.css">
+
+    <padding>
+        <Insets top="50" right="50" bottom="50" left="50"/>
+    </padding>
+
+    <ImageView fitHeight="100" fitWidth="100"
+               pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../images/logo.png"/>
+        </image>
+    </ImageView>
+
+    <Label text="Магазин обуви" styleClass="title-label"/>
+
+    <VBox spacing="10" alignment="CENTER" styleClass="form-pane">
+        <TextField fx:id="loginField" promptText="Логин"/>
+        <PasswordField fx:id="passwordField" promptText="Пароль"/>
+        <Label fx:id="errorLabel" styleClass="error-label" text=""/>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Войти" onAction="#handleLogin"/>
+            <Button text="Гость" onAction="#handleGuest" styleClass="logout-button"/>
+        </HBox>
+    </VBox>
+</VBox>

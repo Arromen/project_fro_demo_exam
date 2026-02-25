@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.MainController"
+            stylesheets="@../css/style.css">
+
+    <!-- Верхняя панель -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="user-info">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            <ImageView fitHeight="50" fitWidth="50" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@../images/logo.png"/>
+                </image>
+            </ImageView>
+            <Label fx:id="userFioLabel" text="Гость" styleClass="title-label"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button fx:id="logoutBtn" text="Выход" onAction="#handleLogout" styleClass="logout-button"/>
+        </HBox>
+    </top>
+
+    <!-- Панель поиска и фильтров -->
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+
+            <HBox spacing="10" alignment="CENTER_LEFT" styleClass="search-pane">
+                <TextField fx:id="searchField" promptText="Поиск по названию, артикулу, описанию"
+                           HBox.hgrow="ALWAYS"/>
+                <ComboBox fx:id="supplierFilter" prefWidth="200"/>
+                <Button fx:id="addProductBtn" text="Добавить товар"
+                        onAction="#handleAddProduct" visible="false"/>
+            </HBox>
+
+            <!-- Таблица товаров -->
+            <TableView fx:id="productTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="Фото" prefWidth="80"/>
+                    <TableColumn text="Артикул" prefWidth="100"/>
+                    <TableColumn text="Наименование" prefWidth="200"/>
+                    <TableColumn text="Категория" prefWidth="120"/>
+                    <TableColumn text="Производитель" prefWidth="120"/>
+                    <TableColumn text="Поставщик" prefWidth="120"/>
+                    <TableColumn text="Цена" prefWidth="100"/>
+                    <TableColumn text="Скидка %" prefWidth="80"/>
+                    <TableColumn text="На складе" prefWidth="80"/>
+                    <TableColumn text="Действия" prefWidth="150"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

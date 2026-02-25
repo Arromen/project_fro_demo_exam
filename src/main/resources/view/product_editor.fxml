@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.controller.ProductEditorController"
+            stylesheets="@../css/style.css"
+            fitToWidth="true">
+
+    <VBox spacing="15" styleClass="form-pane" maxWidth="600">
+        <padding>
+            <Insets top="20" right="30" bottom="20" left="30"/>
+        </padding>
+
+        <Label text="Редактирование товара" styleClass="title-label"/>
+
+        <GridPane hgap="15" vgap="10">
+            <!-- Фото товара -->
+            <ImageView fx:id="productImage" fitWidth="200" fitHeight="200"
+                       GridPane.columnIndex="0" GridPane.rowIndex="0"
+                       GridPane.rowSpan="4"/>
+
+            <Label text="Артикул:" GridPane.columnIndex="1" GridPane.rowIndex="0"
+                   styleClass="form-label"/>
+            <TextField fx:id="articleField" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+
+            <Label text="Наименование:" GridPane.columnIndex="1" GridPane.rowIndex="1"
+                   styleClass="form-label"/>
+            <TextField fx:id="nameField" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+            <Label text="Категория:" GridPane.columnIndex="1" GridPane.rowIndex="2"
+                   styleClass="form-label"/>
+            <ComboBox fx:id="categoryBox" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+            <Label text="Производитель:" GridPane.columnIndex="1" GridPane.rowIndex="3"
+                   styleClass="form-label"/>
+            <ComboBox fx:id="manufacturerBox" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+
+            <Label text="Поставщик:" GridPane.columnIndex="1" GridPane.rowIndex="4"
+                   styleClass="form-label"/>
+            <ComboBox fx:id="supplierBox" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+
+            <Label text="Цена:" GridPane.columnIndex="1" GridPane.rowIndex="5"
+                   styleClass="form-label"/>
+            <TextField fx:id="priceField" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+
+            <Label text="Скидка %:" GridPane.columnIndex="1" GridPane.rowIndex="6"
+                   styleClass="form-label"/>
+            <TextField fx:id="discountField" GridPane.columnIndex="2" GridPane.rowIndex="6"/>
+
+            <Label text="На складе:" GridPane.columnIndex="1" GridPane.rowIndex="7"
+                   styleClass="form-label"/>
+            <TextField fx:id="stockField" GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+
+            <Label text="Ед. измерения:" GridPane.columnIndex="1" GridPane.rowIndex="8"
+                   styleClass="form-label"/>
+            <TextField fx:id="unitField" GridPane.columnIndex="2" GridPane.rowIndex="8"
+                       editable="false"/>
+
+            <Label text="Описание:" GridPane.columnIndex="1" GridPane.rowIndex="9"
+                   styleClass="form-label"/>
+            <TextArea fx:id="descriptionField" GridPane.columnIndex="2" GridPane.rowIndex="9"
+                      prefRowCount="4"/>
+
+            <Button text="Загрузить фото" onAction="#handleUploadImage"
+                    GridPane.columnIndex="2" GridPane.rowIndex="10"/>
+        </GridPane>
+
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Button text="Отмена" onAction="#handleCancel"/>
+            <Button text="Сохранить" onAction="#handleSave" styleClass="button"/>
+        </HBox>
+    </VBox>
+</ScrollPane>

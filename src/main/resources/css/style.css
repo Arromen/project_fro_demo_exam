@@ -1,0 +1,136 @@
+/* ============================================
+   Основные стили приложения Shoe Store
+   ============================================ */
+
+/* Фон приложения */
+.root {
+    -fx-background-color: #F5F5F5;
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Заголовок окна */
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333333;
+}
+
+/* Поля ввода */
+.text-field, .password-field, .combo-box {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 35px;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Кнопки */
+.button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-height: 35px;
+    -fx-pref-width: 120px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #45a049;
+}
+
+.button:disabled {
+    -fx-background-color: #cccccc;
+    -fx-cursor: default;
+}
+
+/* Кнопка выхода */
+.logout-button {
+    -fx-background-color: #f44336;
+    -fx-pref-width: 100px;
+}
+
+.logout-button:hover {
+    -fx-background-color: #da190b;
+}
+
+/* Таблица товаров */
+.table-view {
+    -fx-font-size: 13px;
+    -fx-border-color: #dddddd;
+}
+
+.table-view .column-header {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #bbdefb;
+}
+
+/* Строки таблицы - цвета по заданию */
+/* Скидка > 15%: #2E8B57 (зеленый) */
+/* Нет товара: #ADD8E6 (голубой) */
+
+/* Лейблы */
+.label {
+    -fx-font-size: 14px;
+}
+
+.error-label {
+    -fx-text-fill: #f44336;
+    -fx-font-weight: bold;
+}
+
+/* Панель информации о пользователе */
+.user-info {
+    -fx-background-color: #E8F5E9;
+    -fx-padding: 10px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Форма редактирования товара */
+.form-pane {
+    -fx-padding: 20px;
+    -fx-background-color: white;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #555555;
+}
+
+/* Изображение товара */
+.product-image {
+    -fx-fit-width: 200px;
+    -fx-fit-height: 200px;
+}
+
+/* Поиск и фильтры */
+.search-pane {
+    -fx-padding: 10px;
+    -fx-background-color: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Сообщения (Alert) */
+.dialog-pane {
+    -fx-background-color: #F5F5F5;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #4CAF50;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
